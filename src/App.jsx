@@ -4,6 +4,7 @@ import Hero from './components/hero'
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Details from './components/details';
 import Card from './components/card';
+import NotFound from './components/pagenotfound';
 function App() {
 
   return (
@@ -11,8 +12,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<> <Hero /> <Card /> </>} />
+          <Route path="/home" element={<><Hero /><Card /></>} />
 
           <Route path="/details/:id" element={<Details />} />
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
 
       </BrowserRouter>
@@ -21,3 +24,4 @@ function App() {
 }
 
 export default App
+
